@@ -37,6 +37,9 @@ public class Driver {
                         + File.separator + "resources"
                         + File.separator + "ApiDemos-debug.apk";
                 caps.setCapability(MobileCapabilityType.APP, appUrl);
+               // caps.setCapability("chromedriverExecutable","\"C:\\Users\\mehme\\OneDrive\\Desktop\\Appium\\chromedriver.exe\"");
+                //caps.setCapability("unlockType","pattern");
+                //caps.setCapability("unlockKey","123456789");
                 System.out.println("*** Android App ***");
                 return new AndroidDriver (url,caps);
             case "iOS":
@@ -56,6 +59,21 @@ public class Driver {
                 caps.setCapability("bundleId","com.example.apple-samplecode.UICatalog");
                 System.out.println("***iOS Mobile Web-Safari ***");
                 return new AppiumDriver(url,caps);
+            case "Map" :
+                caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 5");
+                caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
+                caps.setCapability(MobileCapabilityType.UDID,"emulator-5554");
+                String appUrl2 = System.getProperty("user.dir")
+                        + File.separator + "src"
+                        + File.separator + "main"
+                        + File.separator + "resources"
+                        + File.separator + "ApiDemos-debug.apk";
+               // caps.setCapability(MobileCapabilityType.APP, appUrl2);
+                caps.setCapability("appPackage","com.google.android.apps.maps");
+                caps.setCapability("appActivity","com.google.android.maps.MapsActivity");
+
+                System.out.println("*** Android App ***");
+                return new AndroidDriver (url,caps);
             case "safari":
                 caps.setCapability("platformName","iOS");
                 caps.setCapability("browserName","Safari");
@@ -65,7 +83,27 @@ public class Driver {
                 System.out.println("***iOS Mobile Web-Safari ***");
                 return new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"),caps);
             case "chrome":
-                System.out.println("***Android Mobile Web-ChromeApp ***");
+                caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 5");
+                caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
+                caps.setCapability(MobileCapabilityType.UDID,"emulator-5554");
+                caps.setCapability(MobileCapabilityType.BROWSER_NAME,"chrome");
+                //androidCaps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"11.0");
+                //androidCaps.setCapability("skipUnlock","true");
+                //androidCaps.setCapability("fullReset","true");
+                //androidCaps.setCapability("noReset","false");
+                //androidCaps.setCapability("appPackage","false");
+                //androidCaps.setCapability("appActivity","false");
+                //caps.setCapability("chromedriverExecutable","\"C:\\Users\\mehme\\OneDrive\\Desktop\\Appium\\chromedriver.exe\"");
+                //caps.setCapability("unlockType","pattern");
+                //caps.setCapability("unlockKey","123456789");
+                //caps.setCapability(MobileCapabilityType.APP, appUrl3);
+                String appUrl3 = System.getProperty("user.dir")
+                        + File.separator + "src"
+                        + File.separator + "main"
+                        + File.separator + "resources"
+                        + File.separator + "ApiDemos-debug.apk";
+                System.out.println("*** Android App ***");
+                return new AndroidDriver (url,caps);
             default :
                 throw new Exception("Invalid platform");
         }
