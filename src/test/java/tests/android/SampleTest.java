@@ -1,4 +1,4 @@
-package tests;
+package tests.android;
 
 import utils.Driver;
 import io.appium.java_client.AppiumBy;
@@ -8,9 +8,6 @@ import org.openqa.selenium.WebElement;
 
 
 public class SampleTest {
-
-
-
 
     @Test
     public void sampleTest() throws Exception {

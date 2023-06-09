@@ -5,7 +5,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.io.File;
 import java.net.URL;
 
@@ -77,11 +76,12 @@ public class Driver {
                 caps.setCapability(MobileCapabilityType.PLATFORM_NAME,"iOS");
                 caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"XCUITest");
                 caps.setCapability(MobileCapabilityType.BROWSER_NAME,"Safari");
-                caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"12.4");
+                caps.setCapability(MobileCapabilityType.UDID,"94f95949f949g94859f9cv9");
                 caps.setCapability("simulatorStartupTimeout",180000);
+                //caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,"12.4");
                 //caps.setCapability(MobileCapabilityType.DEVICE_NAME,"iPhone X");
                 System.out.println("***iOS Mobile Web-Safari ***");
-                return new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"),caps);
+                return new IOSDriver(url,caps);
             case "chrome":
                 caps.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 5");
                 caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");

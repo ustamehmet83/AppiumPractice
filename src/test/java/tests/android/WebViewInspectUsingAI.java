@@ -1,4 +1,4 @@
-package tests;
+package tests.android;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
