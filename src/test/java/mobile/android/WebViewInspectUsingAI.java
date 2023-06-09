@@ -1,14 +1,11 @@
-package tests.android;
+package mobile.android;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MultiTouchAction;
-import io.appium.java_client.TouchAction;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.annotations.Test;
 import utils.Driver;
 
 import java.time.Duration;

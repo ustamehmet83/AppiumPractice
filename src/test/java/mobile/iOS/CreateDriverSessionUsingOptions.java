@@ -1,11 +1,6 @@
-package tests.iOS;
+package mobile.iOS;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.ios.IOSDriver;
-
-import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URL;
 
 
 public class CreateDriverSessionUsingOptions {

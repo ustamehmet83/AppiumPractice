@@ -1,9 +1,9 @@
-package tests.android;
+package mobile.android;
 
+import org.testng.annotations.Test;
 import utils.Driver;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 
 

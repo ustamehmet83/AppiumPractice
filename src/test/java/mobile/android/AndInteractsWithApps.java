@@ -1,10 +1,8 @@
-package tests.android;
+package mobile.android;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.appmanagement.AndroidInstallApplicationOptions;
-import io.appium.java_client.android.appmanagement.AndroidTerminateApplicationOptions;
 import org.openqa.selenium.By;
 import utils.Driver;
 

@@ -1,4 +1,4 @@
-package tests.android;
+package mobile.android;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;

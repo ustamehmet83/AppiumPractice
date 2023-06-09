@@ -1,4 +1,4 @@
-package tests.iOS;
+package mobile.iOS;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
