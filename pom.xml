@@ -18,7 +18,7 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>8.5.0</version>
+            <version>8.3.0</version>
         </dependency>
 
         <dependency>
@@ -53,11 +53,11 @@
 <!--            <version>5.8.2</version>-->
 <!--            <scope>test</scope>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>7.2.3</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.cucumber</groupId>-->
+<!--            <artifactId>cucumber-java</artifactId>-->
+<!--            <version>7.2.3</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>
