@@ -6,7 +6,7 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
-import utils.Driver;
+import mobile.utils.Driver;
 
 public class Click_SendKeys_ScrollDown_Clear {
     //click

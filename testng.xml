@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <suite name="Suite" parallel="false">
     <listeners>
-        <listener class-name="com.qa.listeners.TestListener";
+        <listener class-name="com.qa.listeners.TestListener"/>
     </listeners>
     <test name="Test">
         <parameter name="platformName" value="Android"/>

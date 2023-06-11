@@ -2,7 +2,7 @@ package mobile.android;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.time.Duration;
 

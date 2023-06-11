@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.util.HashMap;
 import java.util.Map;

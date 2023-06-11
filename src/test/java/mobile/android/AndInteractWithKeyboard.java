@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.time.Duration;
 

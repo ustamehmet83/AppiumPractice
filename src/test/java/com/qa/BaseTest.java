@@ -3,7 +3,7 @@ package com.qa;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 import org.openqa.selenium.support.PageFactory;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.util.HashMap;
 

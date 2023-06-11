@@ -1,16 +1,11 @@
-package utils;
+package mobile.utils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 
 import java.io.File;
 import java.net.URL;
@@ -50,7 +45,7 @@ public class Driver {
 
                         String appUrl = System.getProperty("user.dir")
                                 + File.separator + "src"
-                                + File.separator + "main"
+                                + File.separator + "test"
                                 + File.separator + "resources"
                                 + File.separator + "ApiDemos-debug.apk";
                         caps.setCapability(MobileCapabilityType.APP, appUrl);
@@ -63,7 +58,7 @@ public class Driver {
                         caps.setCapability(MobileCapabilityType.UDID, "77F6B8F0-8877-4EDF-8C8C-99DBE64A93FF");
                         String iOSAppUrl = System.getProperty("user.dir")
                                 + File.separator + "src"
-                                + File.separator + "main"
+                                + File.separator + "test"
                                 + File.separator + "resources"
                                 + File.separator + "UIKitCatalog-iphonesimulator.app";
                         caps.setCapability("simulatorStartupTimeout", 180000);
@@ -77,7 +72,7 @@ public class Driver {
                         caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
                         String appUrl2 = System.getProperty("user.dir")
                                 + File.separator + "src"
-                                + File.separator + "main"
+                                + File.separator + "test"
                                 + File.separator + "resources"
                                 + File.separator + "ApiDemos-debug.apk";
                         //caps.setCapability(MobileCapabilityType.APP, appUrl2);
@@ -101,7 +96,7 @@ public class Driver {
                         caps.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
                         String appUrl3 = System.getProperty("user.dir")
                                 + File.separator + "src"
-                                + File.separator + "main"
+                                + File.separator + "test"
                                 + File.separator + "resources"
                                 + File.separator + "ApiDemos-debug.apk";
                         caps.setCapability("app", appUrl3);
@@ -118,7 +113,7 @@ public class Driver {
                         caps.setCapability("appActivity", ConfigurationReader.getProperty("androidAppActivity"));
                         String appUrl4 = System.getProperty("user.dir")
                                 + File.separator + "src"
-                                + File.separator + "main"
+                                + File.separator + "test"
                                 + File.separator + "resources"
                                 + File.separator + "Android.SauceLabs.Mobile.Sample.app.2.7.1.apk";
                         caps.setCapability("app", appUrl4);

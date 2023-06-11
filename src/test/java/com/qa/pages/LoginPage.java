@@ -5,8 +5,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.Driver;
-import utils.BrowserUtils;
+import mobile.utils.Driver;
+import mobile.utils.BrowserUtils;
 import java.time.Duration;
 
 public class LoginPage extends BaseTest {

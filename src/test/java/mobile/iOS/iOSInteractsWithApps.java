@@ -3,7 +3,7 @@ package mobile.iOS;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.io.File;
 import java.time.Duration;

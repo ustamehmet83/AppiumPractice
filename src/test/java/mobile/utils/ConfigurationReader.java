@@ -1,10 +1,9 @@
-package utils;
+package mobile.utils;
 
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Properties;
@@ -14,7 +13,7 @@ public class ConfigurationReader {
     //1- Create the object of Properties
     private static Properties properties= new Properties();
     public static HashMap<String,String> strings= new HashMap<String,String>();
-    static InputStream stringsis;
+    static InputStream stringsIs;
     static TestUtils utils;
     static InputStream dataIs;
     public static JSONObject loginUsers;
@@ -28,9 +27,9 @@ public class ConfigurationReader {
           properties.load(file);
 
           String xmlFileName="strings/strings.xml";
-          stringsis= ConfigurationReader.class.getClassLoader().getResourceAsStream(xmlFileName);
+          stringsIs= ConfigurationReader.class.getClassLoader().getResourceAsStream(xmlFileName);
           utils=new TestUtils();
-          strings=utils.parseStringXML(stringsis);
+          strings=utils.parseStringXML(stringsIs);
 
           String dataFileName="data/loginUsers.json";
           dataIs= ConfigurationReader.class.getClassLoader().getResourceAsStream(dataFileName);
@@ -39,7 +38,7 @@ public class ConfigurationReader {
 
           //close the file
           file.close();
-          stringsis.close();
+          stringsIs.close();
           dataIs.close();
       } catch (Exception e) {
           System.out.println("Something happened in the ConfigurationReader class.");

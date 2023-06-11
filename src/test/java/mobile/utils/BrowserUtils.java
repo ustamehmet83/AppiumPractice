@@ -1,4 +1,4 @@
-package utils;
+package mobile.utils;
 
 
 import org.openqa.selenium.WebElement;

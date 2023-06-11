@@ -2,17 +2,11 @@ package mobile.tests;
 
 import com.qa.pages.LoginPage;
 import com.qa.pages.ProductsPage;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utils.BrowserUtils;
-import utils.ConfigurationReader;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
+import mobile.utils.BrowserUtils;
+import mobile.utils.ConfigurationReader;
 
 public class LoginTests {
     LoginPage loginPage = new LoginPage();

@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.time.Duration;
 import java.util.HashMap;

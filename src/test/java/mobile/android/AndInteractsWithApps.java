@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.io.File;
 import java.time.Duration;
@@ -22,7 +22,7 @@ public class AndInteractsWithApps {
         Thread.sleep(5000);
         String appUrl2 = System.getProperty("user.dir")
                 + File.separator + "src"
-                + File.separator + "main"
+                + File.separator + "test"
                 + File.separator + "resources"
                 + File.separator + "ApiDemos-debug.apk";
         //((AndroidDriver)driver).installApp(appUrl2,new AndroidInstallApplicationOptions().

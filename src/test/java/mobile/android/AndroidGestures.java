@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.Test;
-import utils.Driver;
+import mobile.utils.Driver;
 
 import java.io.File;
 import java.net.MalformedURLException;
