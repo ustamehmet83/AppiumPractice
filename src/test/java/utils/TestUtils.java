@@ -1,56 +1,45 @@
 package utils;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.InputStream;
+import java.util.HashMap;
 
 public class TestUtils {
     public static final long WAIT=10;
+    public HashMap<String, String> parseStringXML(InputStream file) throws Exception{
+        HashMap<String, String> stringMap = new HashMap<String, String>();
+        //Get Document Builder
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
 
-    public static void waitForVisibility(WebElement e) {
-        WebDriverWait wait;
-        try {
-            wait = new WebDriverWait(Driver.getDriver("saucelab"), Duration.ofSeconds(TestUtils.WAIT));
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
+        //Build Document
+        Document document = builder.parse(file);
+
+        //Normalize the XML Structure; It's just too important !!
+        document.getDocumentElement().normalize();
+
+        //Here comes the root node
+        Element root = document.getDocumentElement();
+
+        //Get all elements
+        NodeList nList = document.getElementsByTagName("string");
+
+        for (int temp = 0; temp < nList.getLength(); temp++)
+        {
+            Node node = nList.item(temp);
+            if (node.getNodeType() == Node.ELEMENT_NODE)
+            {
+                Element eElement = (Element) node;
+                // Store each element key value in map
+                stringMap.put(eElement.getAttribute("name"), eElement.getTextContent());
+            }
         }
-        wait.until(ExpectedConditions.visibilityOf(e));
+        return stringMap;
     }
-
-    public static void clear(WebElement e) {
-        waitForVisibility(e);
-        e.clear();
-    }
-
-    public static void click(WebElement e) {
-        waitForVisibility(e);
-        e.click();
-    }
-
-    public static void sendKeys(WebElement e, String txt) {
-        waitForVisibility(e);
-        e.sendKeys(txt);
-    }
-
-    public void getAttribute(WebElement e, String attribute) {
-        waitForVisibility(e);
-    }
-
-    public static void enterUserName(String username,WebElement userField) {
-        clear(userField);
-        sendKeys(userField, username);
-    }
-
-    public static void enterPassword(String password,WebElement passField) {
-        clear(passField);
-        sendKeys(passField, password);
-    }
-
-    public static void pressLoginBtn(WebElement loginBtn) {
-        click(loginBtn);
-    }
-
 }
