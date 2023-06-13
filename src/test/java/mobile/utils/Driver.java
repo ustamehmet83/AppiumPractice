@@ -42,7 +42,6 @@ public class Driver {
                         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 5");
                         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, ConfigurationReader.getProperty("androidAutomationName"));
                         caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-
                         String appUrl = System.getProperty("user.dir")
                                 + File.separator + "src"
                                 + File.separator + "test"
@@ -51,20 +50,37 @@ public class Driver {
                         caps.setCapability(MobileCapabilityType.APP, appUrl);
                         System.out.println("*** Android App ***");
                         driver = new AndroidDriver(url, caps);
+                        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                         return driver;
                     case "iOS":
-                        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone X");
-                        caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
-                        caps.setCapability(MobileCapabilityType.UDID, "77F6B8F0-8877-4EDF-8C8C-99DBE64A93FF");
+                        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 11.0");
+                        caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, ConfigurationReader.getProperty("iOSAutomationName"));
+                        caps.setCapability(MobileCapabilityType.UDID, "94f95949f949g94859f9cv9");
                         String iOSAppUrl = System.getProperty("user.dir")
                                 + File.separator + "src"
                                 + File.separator + "test"
                                 + File.separator + "resources"
                                 + File.separator + "UIKitCatalog-iphonesimulator.app";
+                        caps.setCapability("app",iOSAppUrl);
                         caps.setCapability("simulatorStartupTimeout", 180000);
                         caps.setCapability("bundleId", "com.example.apple-samplecode.UICatalog");
                         System.out.println("***iOS Mobile Web-Safari ***");
-                        driver = new AndroidDriver(url, caps);
+                        driver = new IOSDriver(url, caps);
+                        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                        return driver;
+                    case "iOSSwagLab":
+                        caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, ConfigurationReader.getProperty("iOSAutomationName"));
+                        caps.setCapability("bundleId", ConfigurationReader.getProperty("iOSBundleId"));
+                        String iOSAppUrl2 = System.getProperty("user.dir")
+                                + File.separator + "src"
+                                + File.separator + "test"
+                                + File.separator + "resources"
+                                + File.separator + "iOS.Simulator.SauceLabs.Mobile.Sample.app.2.7.1.app";
+                        //caps.setCapability("app",iOSAppUrl2);
+                        caps.setCapability("simulatorStartupTimeout", 180000);
+                        System.out.println("***iOS SwagLap App ***");
+                        driver = new IOSDriver(url, caps);
+                        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                         return driver;
                     case "Map":
                         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 5");
@@ -80,6 +96,7 @@ public class Driver {
                         caps.setCapability("appActivity", "com.google.android.maps.MapsActivity");
                         System.out.println("*** Android App ***");
                         driver = new AndroidDriver(url, caps);
+                        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                         return driver;
                     case "safari":
                         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
@@ -102,6 +119,7 @@ public class Driver {
                         caps.setCapability("app", appUrl3);
                         System.out.println("*** Chrome Browser ***");
                         driver = new AndroidDriver(url, caps);
+                        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                         return driver;
                     case "saucelab":
                         caps = new DesiredCapabilities();
@@ -123,7 +141,7 @@ public class Driver {
                         return driver;
                     default:
                         System.out.println("Check driver");
-                        throw new Exception("Invalid platform");
+                        throw new Exception("Invalid platform! - "+platformName);
                 }
 
             }
